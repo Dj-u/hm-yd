@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+#app {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+}
+.van-nav-bar {
+  background: #3296fa;
+}
+.van-nav-bar .van-nav-bar__title {
+  color: #fff;
+}
+.van-nav-bar .van-nav-bar__text {
+  color: #fff;
+  font-size: 12px;
+}
+.van-nav-bar .van-icon {
+  color: #fff;
+}
+.van-tabbar {
+  background: #fdfdfd;
+}
+.van-nav-bar__text:active {
+  background: transparent;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.container .my-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding-top: 46px;
+  padding-bottom: 50px;
+  box-sizing: border-box;
+}
+.container .my-wrapper.noTop {
+  padding-top: 0;
+}
+.skelerons {
+  margin-top: 20px;
+}

@@ -11,7 +11,6 @@
       <router-view></router-view>
     </div>
     <!-- 标签栏  开启路由模式 route :route="true" (布尔)    route="true" (字符串)-->
-
     <van-tabbar route>
       <!-- router-link  to -->
       <van-tabbar-item to="/" icon="home-o">首页</van-tabbar-item>

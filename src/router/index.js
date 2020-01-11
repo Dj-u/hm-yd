@@ -14,8 +14,9 @@ const Video = () => import('@/views/video')// 视频模块
 
 Vue.use(VueRouter)
 
-const routes = new VueRouter([
-  {
+const router = new VueRouter({
+  // routes:[] 固定 不能改变
+  routes: [ {
     path: '/',
     // name: 'home',
     component: Layout, // 一级路由
@@ -68,6 +69,6 @@ const routes = new VueRouter([
     path: '/login',
     component: Login
   }
-
-])
-export default routes
+  ]
+})
+export default router

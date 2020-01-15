@@ -13,13 +13,13 @@ import store from '@/store'
  */
 router.beforeEach(function (to, from, next) {
   // 判断跳转页面是不是user 有没有携带token
-  if (to.path.startswith('/user') && !store.state.user.token) {
+  if (to.path.startsWith('/user') && !store.state.user.token) {
     // 拦截 判断有误token 有token----》放行   没有token----》登录
     let toPath = {
       path: '/login',
       query: {
         //   携带要求的地址带首页  登录成功之后 有了权限 再回到刚才没有权限去的地址
-        redirectUrl: to.path
+        redirectUrl: router.currentRoute.path
       }
     }
     next(toPath)

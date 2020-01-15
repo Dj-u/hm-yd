@@ -2,7 +2,7 @@
 // 因为要在拦截器里处理 token统一注入 ，响应数据的统一处理返回 处理大数字  token失效
 import axios from 'axios' // 引入axios插件
 import JsonBig from 'json-bigint'
-import store from '../store'
+import store from '@/store'
 import router from '@/router'
 // 创建一个axios实例 和原来的axios没有关系
 // 应该给request请求一个默认的请求头  baseURL
@@ -51,7 +51,7 @@ instance.interceptors.response.use(function (response) {
   // 如何判断失效
   // error =》config(当前请求 的配置) request(请求) response(响应)
   // return Promise.reject(error)// 返回错误信息
-  if (error.response && error.response.status === 401) {
+  if (error.response.status === 401) {
     let toPath = { path: '/login', query: { redirectUrl: router.currentRoute.path } }// 跳转对象  到登录界面
     // 表示token过期 先判断 是否有refresh_token
     if (store.state.user.refresh_token) {
@@ -84,6 +84,7 @@ instance.interceptors.response.use(function (response) {
        * params 动态路由  user/:id
        * query传参 user?id=1111
        */
+
       router.push(toPath)
     }
   }

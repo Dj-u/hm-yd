@@ -1,3 +1,4 @@
+// vuex解决数据共享
 import Vue from 'vue'
 import Vuex from 'vuex'
 import * as auth from '@/utils/auth'
